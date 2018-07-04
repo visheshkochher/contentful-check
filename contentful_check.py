@@ -10,7 +10,7 @@ def contentful_check(url):
     else:
         return False
 
-def parse_csv(csv_path='/Users/visheshkochher/url_list.csv'):
+def parse_csv(csv_path):
     url_list = pd.read_csv(csv_path, sep=',')
     final_output = url_list.copy()
     final_output['has_contentful'] = False
@@ -20,4 +20,4 @@ def parse_csv(csv_path='/Users/visheshkochher/url_list.csv'):
     '''FINAL RESULTS'''
     final_output.to_csv('contentful_check.csv', index=False)
 
-parse_csv('url_list.csv')
+parse_csv(csv_path = 'url_list.csv')
